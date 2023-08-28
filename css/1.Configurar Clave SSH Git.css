@@ -1,0 +1,40 @@
+:root{
+    --main-color:#4E67E6;
+    --secondary-color:#4F78FF;
+    --third-color:#495BFC;
+    --container-color:#E0E6F4;
+    --background-color:#BCBEF5;
+    --black:black;
+}
+
+h1{
+    text-align: center;
+}
+.container{
+    background-color: whitesmoke;
+}
+
+footer{
+    background-color: black;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+header{
+    background-color: var(--main-color);
+    color: white;
+}
+
+.row{
+    margin-top: 20px;
+}
+
+.bash-script{
+    background-color:var(--container-color);
+    text-align: left;
+}
+
+.top-bash-script{
+    background-color: var(--secondary-color);
+}

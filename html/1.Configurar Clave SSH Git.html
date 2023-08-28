@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurar Clave SSH Git Ububtu</title>
+    <link rel="stylesheet" href="/bootstrap-5.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/1.Configurar Clave SSH Git.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="row">
+            <div class="col-12">
+                <h1>Configurar Clave SSH Git</h1>
+            </div>
+        </header>
+        <div class="row">
+            <div class="col-12">
+
+                <h2 class="">Paso1</h2>
+                <p class="">
+                    Abre una terminal y verifica si ya tienes una clave SSH en tu sistema ejecutando el siguiente
+                    comando:
+                </p>
+                <pre class="bash-script"><code>
+                    ls ~/.ssh
+                </code></pre>
+                <button type="button" class="col-12 btn btn-dark">
+                    copiar
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h2>Paso 2</h2>
+                <p>Si el directorio ~/.ssh está vacío o no contiene una clave con el formato adecuado, puedes generar
+                    una nueva clave SSH. Ejecuta el siguiente comando y reemplaza tu_correo@example.com con tu dirección
+                    de correo electrónico asociada a tu cuenta de Git:
+                </p>
+                <pre class="bash-script"><code>
+                    ssh-keygen -t rsa -b 4096 -C "tu_correo@example.com"
+                </code></pre>
+                <button type="button" class="col-12 btn btn-dark">
+                    copiar
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h2>Paso 3</h2>
+                <p>
+                    El agente SSH te ayudará a gestionar tus claves y evitará que tengas que ingresar la contraseña cada
+                    vez que te conectes. Ejecuta el siguiente comando para iniciar el agente SSH:
+                </p>
+                <pre class="bash-script"><code>
+                    eval "$(ssh-agent -s)"
+                </code></pre>
+                <button type="button" class="col-12 btn btn-dark">
+                    copiar
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h2>Paso 4</h2>
+                <p>
+                    Añade la clave SSH que generaste al agente ejecutando:
+                </p>
+                <pre class="bash-script"><code>
+                    ssh-add ~/.ssh/id_rsa
+                </code></pre>
+                <button type="button" class="col-12 btn btn-dark">
+                    copiar
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h2>Paso 5</h2>
+                <p>
+                    Para utilizar la clave SSH en tu cuenta de Git, necesitas copiar la clave pública al portapapeles.
+                    Puedes hacerlo con el siguiente comando:
+                </p>
+                <pre class="bash-script"><code>
+                    cat ~/.ssh/id_rsa.pub
+                </code></pre>
+                <button type="button" class="col-12 btn btn-dark">
+                    copiar
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h2>Paso 6</h2>
+                <p>
+                    Accede a la plataforma web de tu proveedor de Git (GitHub, GitLab, Bitbucket, etc.), inicia sesión
+                    en tu cuenta y navega a la sección de configuración de claves SSH. Pega la clave pública que
+                    copiaste en el paso anterior.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h2>Paso 7</h2>
+                <p>
+                    Para asegurarte de que todo esté configurado correctamente, intenta clonar un repositorio utilizando
+                    SSH en lugar de HTTPS. Por ejemplo:
+                </p>
+                <pre class="bash-script"><code>
+                    git clone git@github.com:usuario/nombre-repositorio.git
+                </code></pre>
+                <button type="button" class="col-12 btn btn-dark">
+                    copiar
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <p>
+                    Con estos pasos, habrás configurado tu clave SSH en Ubuntu para utilizarla con Git. Ahora podrás
+                    realizar operaciones en tus repositorios de Git sin tener que ingresar tu contraseña cada vez que
+                    interactúes con ellos.
+                </p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <!--TODO: poner contenido en el fotter-->
+        <a href="#">@Batishavo</a>
+    </footer>
+    <script src="/bootstrap-5.3.1-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/1.Configurar Clave SSH Git.js"></script>
+</body>
+
+</html>
