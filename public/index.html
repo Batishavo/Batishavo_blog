@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome to Firebase Hosting</title>
+
+  <!-- update the version number as needed -->
+  <script defer src="/__/firebase/10.3.0/firebase-app-compat.js"></script>
+  <!-- include only the Firebase features as you need -->
+  <script defer src="/__/firebase/10.3.0/firebase-auth-compat.js"></script>
+  <script defer src="/__/firebase/10.3.0/firebase-database-compat.js"></script>
+  <script defer src="/__/firebase/10.3.0/firebase-firestore-compat.js"></script>
+  <script defer src="/__/firebase/10.3.0/firebase-functions-compat.js"></script>
+  <script defer src="/__/firebase/10.3.0/firebase-messaging-compat.js"></script>
+  <script defer src="/__/firebase/10.3.0/firebase-storage-compat.js"></script>
+  <script defer src="/__/firebase/10.3.0/firebase-analytics-compat.js"></script>
+  <script defer src="/__/firebase/10.3.0/firebase-remote-config-compat.js"></script>
+  <script defer src="/__/firebase/10.3.0/firebase-performance-compat.js"></script>
+  <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+  <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+  <link rel="stylesheet" href="bootstrap/css/bootstra.css">
+  <link rel="stylesheet" href="css/Configurar_Clave_SSH_Git.css">
+
+</head>
+
+<body>
+
+  <div class="container">
+    <header class="row">
+      <div class="col-12">
+        <h1>Configurar Clave SSH Git</h1>
+      </div>
+    </header>
+    <div class="row">
+      <div class="col-12">
+
+        <h2 class="">Paso1</h2>
+        <p class="">
+          Abre una terminal y verifica si ya tienes una clave SSH en tu sistema ejecutando el siguiente
+          comando:
+        </p>
+        <div class="bash-script mb-2">
+          <code id="command-1">ls ~/.ssh</code>
+        </div>
+        <button id="boton-copiar-1" type="button" class="col-12 btn btn-dark">
+          copiar
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <h2>Paso 2</h2>
+        <p>Si el directorio ~/.ssh está vacío o no contiene una clave con el formato adecuado, puedes generar
+          una nueva clave SSH. Ejecuta el siguiente comando y reemplaza tu_correo@example.com con tu dirección
+          de correo electrónico asociada a tu cuenta de Git:
+        </p>
+        <div class="bash-script mb-2">
+          <code id="command-2">ssh-keygen -t rsa -b 4096 -C "tu_correo@example.com"</code>
+        </div>
+        <button id="boton-copiar-2" type="button" class="col-12 btn btn-dark">
+          copiar
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <h2>Paso 3</h2>
+        <p>
+          El agente SSH te ayudará a gestionar tus claves y evitará que tengas que ingresar la contraseña cada
+          vez que te conectes. Ejecuta el siguiente comando para iniciar el agente SSH:
+        </p>
+        <div class="bash-script mb-2">
+          <code id="command-3">eval "$(ssh-agent -s)"</code>
+        </div>
+        <button id="boton-copiar-3" type="button" class="col-12 btn btn-dark">
+          copiar
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <h2>Paso 4</h2>
+        <p>
+          Añade la clave SSH que generaste al agente ejecutando:
+        </p>
+        <div class="bash-script mb-2">
+          <code id="command-4">ssh-add ~/.ssh/id_rsa</code>
+        </div>
+        <button id="boton-copiar-4" type="button" class="col-12 btn btn-dark">
+          copiar
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <h2>Paso 5</h2>
+        <p>
+          Para utilizar la clave SSH en tu cuenta de Git, necesitas copiar la clave pública al portapapeles.
+          Puedes hacerlo con el siguiente comando:
+        </p>
+        <div class="bash-script mb-2">
+          <code id="command-5">cat ~/.ssh/id_rsa.pub</code>
+        </div>
+        <button id="boton-copiar-5" type="button" class="col-12 btn btn-dark">
+          copiar
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <h2>Paso 6</h2>
+        <p>
+          Accede a la plataforma web de tu proveedor de Git (GitHub, GitLab, Bitbucket, etc.), inicia sesión
+          en tu cuenta y navega a la sección de configuración de claves SSH. Pega la clave pública que
+          copiaste en el paso anterior.
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <h2>Paso 7</h2>
+        <p>
+          Para asegurarte de que todo esté configurado correctamente, intenta clonar un repositorio utilizando
+          SSH en lugar de HTTPS. Por ejemplo:
+        </p>
+        <div class="bash-script mb-2">
+          <code id="command-7">git clone git@github.com:usuario/nombre-repositorio.git</code>
+        </div>
+        <button id="boton-copiar-7" type="button" class="col-12 btn btn-dark">
+          copiar
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <p>
+          Con estos pasos, habrás configurado tu clave SSH en Ubuntu para utilizarla con Git. Ahora podrás
+          realizar operaciones en tus repositorios de Git sin tener que ingresar tu contraseña cada vez que
+          interactúes con ellos :)
+        </p>
+        <img alt="Imagen de git" class="img-fluid mb-3" src="https://nodd3r.com/media/blog/Portadas_blog_21.png" />
+      </div>
+    </div>
+  </div>
+  <footer>
+    <a href="https://github.com/Batishavo/Batishavo_blog">@Batishavo</a>
+  </footer>
+  <script src="bootstrap/js/bootstra.js"></script>
+  <script src="js/Configurar_Clave_SSH_Git.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const loadEl = document.querySelector('#load');
+      // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+      // // The Firebase SDK is initialized and available here!
+      //
+      // firebase.auth().onAuthStateChanged(user => { });
+      // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+      // firebase.firestore().doc('/foo/bar').get().then(() => { });
+      // firebase.functions().httpsCallable('yourFunction')().then(() => { });
+      // firebase.messaging().requestPermission().then(() => { });
+      // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+      // firebase.analytics(); // call to activate
+      // firebase.analytics().logEvent('tutorial_completed');
+      // firebase.performance(); // call to activate
+      //
+      // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+      try {
+        let app = firebase.app();
+        let features = [
+          'auth',
+          'database',
+          'firestore',
+          'functions',
+          'messaging',
+          'storage',
+          'analytics',
+          'remoteConfig',
+          'performance',
+        ].filter(feature => typeof app[feature] === 'function');
+        loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+      } catch (e) {
+        console.error(e);
+        loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+      }
+    });
+  </script>
+</body>
+
+</html>
