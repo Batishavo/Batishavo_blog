@@ -31,10 +31,19 @@ header{
 }
 
 .bash-script{
+    color: black;
     background-color:var(--container-color);
-    text-align: left;
+    text-align: center;
 }
 
 .top-bash-script{
     background-color: var(--secondary-color);
+}
+
+code{
+    color: black;
+    font-size: large;
+}
+p{
+    font-size: large;
 }
